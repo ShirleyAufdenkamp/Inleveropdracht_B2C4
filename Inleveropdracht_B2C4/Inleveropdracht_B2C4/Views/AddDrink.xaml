@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Inleveropdracht_B2C4.Views.AddDrink">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#EDE3FF">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200" />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="100" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45" />
+                    <RowDefinition Height="150" />
+                </Grid.RowDefinitions>
+
+                <Label Text="Drank:" TextColor="Black"  Grid.Column="0" FontSize="20"/>
+                <Label Text="Afbeelding: " TextColor="Black" Grid.Row="1" Grid.Column="0" FontSize="20"/>
+
+                <Entry x:Name ="En_Drink" Grid.Column="1" Grid.Row="0" TextColor="Black"/>
+                <Image x:Name="PhotoImage" Source= "{Binding Image}" Grid.Row="1" Grid.Column="1"/>
+
+                <Button x:Name="Bt_Camera" Margin="20,20,20,20" HorizontalOptions="StartAndExpand" Text="Foto Maken" TextColor="White" BackgroundColor="Purple"  Clicked="Cl_Camera" Grid.Column="2" Grid.Row="2"/>
+
+            </Grid>
+            <Button x:Name="Bt_Add" Margin="20,20,20,20" HorizontalOptions="CenterAndExpand" Text="Toevoegen" TextColor="White" BackgroundColor="Purple"  Clicked="Cl_AddAsync"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

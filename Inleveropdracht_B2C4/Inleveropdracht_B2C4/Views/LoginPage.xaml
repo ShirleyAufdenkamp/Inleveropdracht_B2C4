@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Inleveropdracht_B2C4.Views.LoginPage"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#EDE3FF">
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="215" />
+                    <ColumnDefinition Width="180" />
+                </Grid.ColumnDefinitions>
+                <Label x:Name="Lb_Username" Text="Gebruikersnaam: " FontSize="20" TextColor="Black" Padding="30,10,30,10" Grid.Column="0" Grid.Row="1"/>
+                <Entry x:Name="En_Username" Grid.Column="1" Grid.Row="1" FontSize="20" TextColor="Black"/>
+                <Label x:Name="Lb_Password" Text="Wachtwoord: " FontSize="20" TextColor="Black" Padding="30,0,30,0" Grid.Column="0" Grid.Row="2"/>
+                <Entry x:Name="En_Password" Grid.Column="1" Grid.Row="2" FontSize="20" TextColor="Black"/>
+
+            </Grid>
+            <StackLayout HorizontalOptions="CenterAndExpand">
+                <Button x:Name="Bt_Login" Margin="20,20,20,20" Text="Login" TextColor="White" BackgroundColor="Purple"  Clicked="Cl_Login"/>
+            </StackLayout>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

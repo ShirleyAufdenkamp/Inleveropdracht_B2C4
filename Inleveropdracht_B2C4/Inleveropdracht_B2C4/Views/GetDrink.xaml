@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Inleveropdracht_B2C4.Views.GetDrink">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#EDE3FF">
+            <ListView x:Name="DataListViewDrinks">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="20" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Image Source="{Binding Picture}" Aspect="AspectFill" Grid.Column="0"/>
+                                <Label Text="{Binding Drink}" TextColor="Black" Grid.Column="1"/>
+                                <Entry x:Name="testEntry" Text="{Binding Source={x:Reference testStepper}, Path=Value, StringFormat='{0:F0}'}" TextColor="Black" Grid.Column="2"/>
+                                <Stepper x:Name="testStepper" Maximum="{Binding Count}" Minimum="0" Value="0" Grid.Column="3"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="Bt_Get" Margin="20,20,20,20" HorizontalOptions="CenterAndExpand" Text="Pak" TextColor="White" BackgroundColor="Purple"  Clicked="Cl_Get"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Inleveropdracht_B2C4.Views.Weather">
+    <ContentPage.Content>
+        <StackLayout>
+            <CollectionView ItemsSource="{Binding WeatherList}">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout  Orientation="Vertical" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="10">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <Grid Grid.Row="0" BackgroundColor="#d4d6c8">
+                                    <Label Grid.Row="0" Grid.ColumnSpan="2" Text="Today" VerticalOptions="Center" HorizontalOptions="Center" FontSize="15"/>
+                                    <Label Grid.Row="1" Grid.Column="0" Text="Temperatuur is: " />
+                                    <Label Grid.Row="1" Grid.Column="1" Text="{Binding main.temp, StringFormat='{0:N0}°'}"/>
+                                    <Label Grid.Row="2" Grid.Column="0" Text="Voelt als: " />
+                                    <Label Grid.Row="2" Grid.Column="1" Text="{Binding main.feels_like, StringFormat='{0:N0}°'}"/>
+                                    <Label Grid.Row="3" Grid.Column="0" Text="Humidity : " />
+                                    <Label Grid.Row="3" Grid.Column="1" Text="{Binding main.pressure, StringFormat='{0:N0}%'}"/>
+                                    <Label Grid.Row="4" Grid.Column="0" Text="Wind snelheid : " />
+                                    <Label Grid.Row="4" Grid.Column="1" Text="{Binding wind.speed, StringFormat='{0:N0}km/h'}"/>
+                                    <Label Grid.Row="5" Grid.Column="0" Text="Locatie: " />
+                                    <Label Grid.Row="5" Grid.Column="1" Text="{Binding name}"/>
+                                </Grid>
+                            </Grid>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
